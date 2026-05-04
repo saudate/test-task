@@ -6,6 +6,12 @@
   "scripts": {
     "test": "playwright test",
     "test:headed": "playwright test --headed",
+    "test:login": "playwright test tests/login.spec.ts",
+    "test:processes": "playwright test tests/processes.spec.ts",
+    "test:dashboard": "playwright test tests/dashboard.spec.ts",
+    "test:login:headed": "playwright test tests/login.spec.ts --headed",
+    "test:processes:headed": "playwright test tests/processes.spec.ts --headed",
+    "test:dashboard:headed": "playwright test tests/dashboard.spec.ts --headed",
     "report": "playwright show-report",
     "allure:generate": "allure generate ./allure-results --clean -o ./allure-report",
     "allure:open": "allure open ./allure-report",

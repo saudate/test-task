@@ -7,5 +7,9 @@ node_modules/
 /allure-results/
 /allure-report/
 .env
+
+# SSH keys
+id_rsa*
+*.pem
 id_rsa_saudate
 id_rsa_saudate.pub

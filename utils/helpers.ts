@@ -1,9 +1,9 @@
 /**
- * Generate unique process name with timestamp
- * @returns Process name with current date and time
+ * Generate a unique name with a timestamp suffix
+ * @returns Unique name in format `Item_YYYY-MM-DDTHH-mm-ss`
  */
-export function generateProcessName(): string {
+export function generateName(): string {
   const now = new Date();
   const timestamp = now.toISOString().replace(/[:.]/g, '-').slice(0, -5);
-  return `Process_${timestamp}`;
+  return `Item_${timestamp}`;
 }

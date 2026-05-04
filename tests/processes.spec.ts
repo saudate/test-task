@@ -1,5 +1,5 @@
 import { test, expect } from '../fixtures/test.fixture';
-import { generateProcessName } from '../utils/helpers';
+import { generateName } from '../utils/helpers';
 
 test.beforeEach(async ({ loginPage, userCredentials, baseURL }) => {
   await loginPage.navigate(baseURL);
@@ -10,7 +10,7 @@ test(
   'User should successfully work with processes',
   { tag: '@processes' },
   async ({ processesPage, openProcessEditor }) => {
-    const processName = generateProcessName();
+    const processName = generateName();
 
     await test.step('Navigate to Processes page', async () => {
       await processesPage.goToProcesses();
@@ -38,6 +38,10 @@ test(
 
     await test.step('Click Save button', async () => {
       await processEditor.clickSaveBtn();
+    });
+
+    await test.step('Verify Process Start node is visible on the canvas', async () => {
+      await expect(processEditor.canvasProcessStartNode).toBeVisible();
     });
 
     await test.step('Verify process name is displayed', async () => {

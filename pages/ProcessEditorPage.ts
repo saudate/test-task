@@ -9,6 +9,7 @@ export class ProcessEditorPage extends BasePage {
   readonly closeSidebarBtn: Locator;
   readonly saveBtn: Locator;
   readonly canvas: Locator;
+  readonly canvasProcessStartNode: Locator;
 
   constructor(page: Page) {
     super(page);
@@ -19,6 +20,7 @@ export class ProcessEditorPage extends BasePage {
     this.closeSidebarBtn = this.page.getByRole('button', { name: 'Close' });
     this.saveBtn = this.page.getByTestId('pdSave-click');
     this.canvas = this.page.getByTestId('pdEmpty-hint');
+    this.canvasProcessStartNode = this.page.locator('.linqi-graph-nodeContainerEditable');
   }
 
   /**
